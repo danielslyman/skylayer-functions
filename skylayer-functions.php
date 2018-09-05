@@ -7,7 +7,7 @@
  * Author URI: https://skylayer.eu
  * GitHub Plugin URI: danielslyman/skylayer-functions
  * GitHub Plugin URI: https://github.com/danielslyman/skylayer-functions/
- * Version: 1.2
+ * Version: 1.3
  */
 
 /* Place custom code below this line. */
