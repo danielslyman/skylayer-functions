@@ -5,6 +5,8 @@
  * Description: Custom functions to improve WordPress sites deployed by Skylayer.
  * Author: Daniel Slyman (Skylayer)
  * Author URI: https://skylayer.eu
+ * GitHub Plugin URI: danielslyman/skylayer-functions
+ * GitHub Plugin URI: https://github.com/danielslyman/skylayer-functions/
  * Version: 1.1
  */
 
